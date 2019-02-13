@@ -1,0 +1,29 @@
+/**
+* Image.tsx
+*
+* Copyright (c) Microsoft Corporation. All rights reserved.
+* Licensed under the MIT license.
+*
+* RN-specific implementation of the cross-platform Image abstraction.
+*/
+import React = require('react');
+import RN = require('react-native');
+import SyncTasks = require('synctasks');
+import Types = require('../common/Types');
+export declare class Image extends React.Component<Types.ImageProps, {}> {
+    static prefetch(url: string): SyncTasks.Promise<boolean>;
+    private _isMounted;
+    private _nativeImageWidth;
+    private _nativeImageHeight;
+    protected _getAdditionalProps(): RN.ImageProps;
+    componentDidMount(): void;
+    componentWillUnmount(): void;
+    render(): JSX.Element;
+    setNativeProps(nativeProps: RN.ImageProps): void;
+    protected getStyles(): Types.ImageStyleRuleSet | Types.ImageStyleRuleSet[];
+    private _onLoad;
+    private _onError;
+    getNativeWidth(): number;
+    getNativeHeight(): number;
+}
+export default Image;

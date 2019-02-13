@@ -1,0 +1,17 @@
+import { NavigationCommand, NavigatorDelegate } from './NavigatorCommon';
+import RX = require('../common/Interfaces');
+import Types = require('../common/Types');
+export declare class NavigatorStandardDelegate extends NavigatorDelegate {
+    private _navigator;
+    constructor(navigator: RX.Navigator);
+    getRoutes(): Types.NavigatorRoute[];
+    immediatelyResetRouteStack(nextRouteStack: Types.NavigatorRoute[]): void;
+    render(): JSX.Element;
+    private _renderScene;
+    handleBackPress(): void;
+    private _configureNativeScene;
+    private _onRouteWillFocus;
+    private _onRouteDidFocus;
+    processCommand(commandQueue: NavigationCommand[]): void;
+}
+export default NavigatorStandardDelegate;

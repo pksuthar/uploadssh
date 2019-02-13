@@ -1,0 +1,19 @@
+/**
+* Text.tsx
+*
+* Copyright (c) Microsoft Corporation. All rights reserved.
+* Licensed under the MIT license.
+*
+* RN-specific implementation of the cross-platform Text abstraction.
+*/
+import React = require('react');
+import RN = require('react-native');
+import Types = require('../common/Types');
+export declare class Text extends React.Component<Types.TextProps, {}> {
+    setNativeProps(nativeProps: RN.TextProps): void;
+    render(): JSX.Element;
+    protected _getStyles(): Types.TextStyleRuleSet | Types.TextStyleRuleSet[];
+    focus(): void;
+    blur(): void;
+}
+export default Text;
